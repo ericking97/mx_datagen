@@ -74,10 +74,13 @@ yaqui_surnames = ['Anguamea', 'Bacasehua', 'Buitimea', 'Choki', 'Cochemea',
                   'Pamea', 'Sibamea', 'Tequida', 'Yeomans']
 
 
-class GenNames():
+class GenNames:
     """Names class"""
-    def create_first_name(self, arg=None):
-        """Return a male name"""
+    @staticmethod
+    def create_first_name(arg=None):
+        """Return a male name
+        :param arg:
+        """
         if arg is 'male' or arg is 'Male' or args is 'M':
             first_name = random.choice(male_names)
         elif arg is 'female' or arg is 'Female' or args is 'F':
@@ -86,8 +89,11 @@ class GenNames():
             first_name = random.choice(male_names + female_names)
         return first_name
 
-    def create_surname(self, arg=None):
-        """Return a complete random surname"""
+    @staticmethod
+    def create_surname(arg=None):
+        """Return a complete random surname
+        :param arg:
+        """
         if arg is 'common':
             surname = random.choice(surnames)
         elif arg is 'mayan':

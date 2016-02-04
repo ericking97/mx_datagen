@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Returns functions"""
 import names
-
+import datetime
 
 class Name:
     """Name module
@@ -12,6 +12,7 @@ class Name:
         *female_first_name
         *first_name
         *surname"""
+
     @staticmethod
     def male_fullname():
         """Returns a male fullname"""
@@ -54,3 +55,16 @@ class Name:
             return names.GenNames().create_surname()
         else:
             return names.GenNames().create_surname(param)
+
+
+class Date:
+    """Dates module"""
+
+    @staticmethod
+    def random():
+        """Returns a random date"""
+
+    @staticmethod
+    def before(year=None):
+        """Returns a date before this day"""
+        datetime.datetime.now()

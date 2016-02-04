@@ -1,10 +1,18 @@
 # -*- coding: utf-8 -*-
 """Returns functions"""
 import names
+import datetime
 
+class Name:
+    """Name module
+    Methods:
+        *male_fullname
+        *female_fullname
+        *male_first_name
+        *female_first_name
+        *first_name
+        *surname"""
 
-class Name():
-    """Datagenerator class"""
     @staticmethod
     def male_fullname():
         """Returns a male fullname"""
@@ -39,9 +47,24 @@ class Name():
         return names.GenNames().create_first_name()
 
     @staticmethod
-    def surname(args=None):
-        """Returns a random surname"""
-        if args is None:
+    def surname(param=None):
+        """Returns a random surname, if you want an specific type of surname send it as a param
+        :param param:
+        """
+        if param is None:
             return names.GenNames().create_surname()
         else:
-            return names.GenNames().create_surname(args)
+            return names.GenNames().create_surname(param)
+
+
+class Date:
+    """Dates module"""
+
+    @staticmethod
+    def random():
+        """Returns a random date"""
+
+    @staticmethod
+    def before(year=None):
+        """Returns a date before this day"""
+        datetime.datetime.now()
