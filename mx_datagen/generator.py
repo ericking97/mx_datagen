@@ -80,7 +80,7 @@ class Phone:
                     phone = args + str(random.randint(1111111, 9999999))
                 return phone
             else:
-                return "La lada que mandaste no es valida"
+                raise ValueError('La lada que mandaste no es válida')
 
 class Email:
     """Email module"""
