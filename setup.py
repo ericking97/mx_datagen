@@ -8,5 +8,5 @@ setup(name='mx_datagenerator',
       author='ericking97',
       author_email='ericking97@hotmail.com',
       license='MIT',
-      packages=['mx_datagen'],
+      packages=['mx_datagen', 'mx_datagen/data_source'],
       zip_safe=False)

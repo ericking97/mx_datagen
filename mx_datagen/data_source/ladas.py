@@ -1,8 +1,3 @@
-"""Communications module"""
-import random
-
-domain = ['@yahoo.com', '@yahoo.com.mx', '@hotmail.com', '@gmail.com']
-
 base_numbers = ['222', '223', '224', '225', '226', '227', '228', '229', '231',
                 '232', '233', '235', '236', '237', '238', '241', '243', '244',
                 '245', '246', '247', '248', '249', '271', '272', '273', '274',
@@ -48,23 +43,3 @@ base_numbers = ['222', '223', '224', '225', '226', '227', '228', '229', '231',
                 '971', '972', '981', '982', '983', '984', '985', '986', '987',
                 '988', '991', '992', '993', '994', '995', '996', '997', '998',
                 '999']
-
-class Phones():
-    """Phone module"""
-    def ten_digits():
-        """Return a ten digits phone number"""
-        initial_numbers = random.choice(base_numbers)
-        if len(initial_numbers) == 2:
-            complete_number = initial_numbers + str(random.randint(00000000, 99999999))
-        elif len(initial_numbers) == 3:
-            complete_number = initial_numbers + str(random.randint(0000000, 9999999))
-        return complete_number
-
-    def eight_digits():
-        """Return a eight digits phone number"""
-        initial_numbers = random.choice(base_numbers)
-        if len(initial_numbers) == 2:
-            complete_number = initial_numbers + str(random.randint(000000, 999999))
-        elif len(initial_numbers) == 3:
-            complete_number = initial_numbers + str(random.randint(00000, 99999))
-        return complete_number

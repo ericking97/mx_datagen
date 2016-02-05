@@ -1,7 +1,11 @@
 # -*- coding: utf-8 -*-
-"""Returns functions"""
-import names
-import datetime
+"""This generator file is the core of the project"""
+import random
+from .email import Emails
+from .names import GenNames
+
+from .data_source.ladas import *
+
 
 class Name:
     """Name module
@@ -16,35 +20,35 @@ class Name:
     @staticmethod
     def male_fullname():
         """Returns a male fullname"""
-        first_name = names.GenNames().create_first_name('male')
-        paternal_surname = names.GenNames().create_surname()
-        maternal_surname = names.GenNames().create_surname()
+        first_name = GenNames.create_first_name('male')
+        paternal_surname = GenNames.create_surname()
+        maternal_surname = GenNames.create_surname()
         fullname = first_name + ' ' + paternal_surname + ' ' + maternal_surname
         return fullname
 
     @staticmethod
     def female_fullname():
         """Returns a female fullname"""
-        first_name = names.GenNames().create_first_name('female')
-        paternal_surname = names.GenNames().create_surname()
-        maternal_surname = names.GenNames().create_surname()
+        first_name = GenNames.create_first_name('female')
+        paternal_surname = GenNames.create_surname()
+        maternal_surname = GenNames.create_surname()
         fullname = first_name + ' ' + paternal_surname + ' ' + maternal_surname
         return fullname
 
     @staticmethod
     def male_first_name():
         """Returns a male first name"""
-        return names.GenNames().create_first_name('male')
+        return GenNames.create_first_name('male')
 
     @staticmethod
     def female_first_name():
         """Returns a female first name"""
-        return names.GenNames().create_first_name('female')
+        return GenNames.create_first_name('female')
 
     @staticmethod
     def first_name():
         """Returns a random first name male/female"""
-        return names.GenNames().create_first_name()
+        return GenNames.create_first_name()
 
     @staticmethod
     def surname(param=None):
@@ -52,19 +56,40 @@ class Name:
         :param param:
         """
         if param is None:
-            return names.GenNames().create_surname()
+            return GenNames.create_surname()
         else:
-            return names.GenNames().create_surname(param)
+            return GenNames.create_surname(param)
 
 
-class Date:
-    """Dates module"""
-
+class Phone:
+    """Phone module"""
     @staticmethod
-    def random():
-        """Returns a random date"""
+    def create_phone(args=None):
+        """Returns a phone number"""
+        if args is None:
+            base = random.choice(base_numbers)
+            if len(base) is 2:
+                phone = base + str(random.randint(11111111, 99999999))
+            elif len(base) is 3:
+                phone = base + str(random.randint(1111111, 9999999))
+            return phone
+        else:
+            status = args in base_numbers
+            if status is True:
+                if len(args) is 2:
+                    phone = args + str(random.randint(11111111, 99999999))
+                elif len(args) is 3:
+                    phone = args + str(random.randint(1111111, 9999999))
+                return phone
+            else:
+                return "La lada que mandaste no es valida"
 
+class Email:
+    """Email module"""
     @staticmethod
-    def before(year=None):
-        """Returns a date before this day"""
-        datetime.datetime.now()
+    def create_email(args=None):
+        """Returns an email, arg only if you want to make an email from an alias Ex:'your-email+123@gmail.com' """
+        if args is None:
+            return Emails.random_email()
+        else:
+            return Emails.alias_email(args)
