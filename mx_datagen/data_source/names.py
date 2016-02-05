@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+"""Names module"""
+
 
 male_names = ['Aarón', 'Ábaco', 'Abadón', 'Abdalá', 'Abdemelec', 'Abdénago',
               'Abdías', 'Abdón', 'Abdul', 'Abédnego', 'Abel', 'Abelardo',
@@ -70,4 +72,3 @@ nahuatl_surnames = ['Amixtián', 'Apahuita', 'Apango', 'Arnozoqueño', 'Atlixco'
 yaqui_surnames = ['Anguamea', 'Bacasehua', 'Buitimea', 'Choki', 'Cochemea',
                   'Cosmea', 'Huiqui', 'Jusacamea', 'Misibea', 'Moroyoqui',
                   'Pamea', 'Sibamea', 'Tequida', 'Yeomans']
-

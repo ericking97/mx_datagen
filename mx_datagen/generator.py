@@ -2,10 +2,8 @@
 """This generator file is the core of the project"""
 import random
 from .email import Emails
-from .names import GenNames
-
 from .data_source.ladas import *
-
+from .names import GenNames
 
 class Name:
     """Name module
