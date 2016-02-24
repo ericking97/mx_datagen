@@ -1,3 +1,5 @@
+"""Email's data"""
+
 host = ['abandoned', 'able', 'absolute', 'adorable', 'adventurous', 'academic', 'acceptable', 'acclaimed',
         'accomplished', 'accurate', 'aching', 'acidic', 'acrobatic', 'brave', 'breakable', 'brief', 'bright',
         'brilliant', 'brisk', 'broken', 'bronze', 'brown', 'bruised', 'calculating', 'calm', 'candid', 'canine',
@@ -24,4 +26,7 @@ host = ['abandoned', 'able', 'absolute', 'adorable', 'adventurous', 'academic', 
         'victorious', 'vigilant', 'vigorous', 'villainous', 'violet', 'white', 'whole', 'whopping', 'wicked',
         'wide', 'wide-eyed', 'wiggly', 'wild', 'willing', 'wilted', 'winding', 'windy', 'yawning', 'yearly','zealous']
 
-domain = ['.net', '.com', '.org', '.club', '.io', '.me', '.es']
+domain = ['.com', '.org', '.net', '.int', '.edu', '.gov', '.mil']
+
+country = ['.ac', '.ad', '.ae', '.af', '.ag', '.ai', '.al', '.am', '.ao', '.co', '.cu', '.cymru', '.de', '.es', '.eu',
+           '.fr', '.it', '.kr', '.mx', '.ru', '.su', '.us', '.uk']
