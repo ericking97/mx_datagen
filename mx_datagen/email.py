@@ -1,7 +1,9 @@
 # -*- encoding:utf-8 -*-
 """Communications module"""
 from __future__ import unicode_literals
+
 import random
+
 from data_source.emails_data import *
 from data_source.names import *
 
