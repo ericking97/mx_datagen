@@ -268,3 +268,89 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> Date.last_payment_day('2016-02-02')
 '2016-02-16'
 ```
+#### PostalCode
+Este módulo contiene funciones para crear un código postal aleatorio, buscar información relacionada a un código postal o bien crear un código postal de cierto estado.
+
+##### PostalCode.random(info)
+Regresa un código postal aleatorio.
+* Si no se manda parametros solo envía el código postal.
+* Si se le manda "Basic" regresa información básica del código postal. (Colonia, Municipio, Ciudad y Estado)
+* Si se le manda "All" regresa toda la información del código postal. (Tipo de colonia, Colonia, Municipio, Ciudad, Estado, Número de Colonia)
+``` sh
+$ python
+Python 2.7.6 (default, Jun 22 2015, 17:58:13) 
+[GCC 4.8.2] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> from mx_datagen import PostalCode
+>>> PostalCode.random()
+u'92783'
+>>> PostalCode.random('Basic')
+(u'59531', u'Cerro de San Francisco', u'Jiquilpan', u'59511', u'Michoac\xe1n de Ocampo')
+>>> PostalCode.random('All')
+(u'56244', u'Pueblo', u'San Jer\xf3nimo Amanalco', u'Texcoco', u'56101', u'M\xe9xico', u'56101')
+>>> PostalCode.random('asd')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "mx_datagen/postalcode.py", line 41, in random
+    raise ValueError('Please enter one of the following param\n'
+ValueError: Please enter one of the following param
+* Basic       * All
+```
+##### PostalCode.get_info(postal_code, info)
+Regresa la información de una código postal.
+* Si se le manda solo el código postal regresa toda la información
+* Si se le manda el código postal y en info 'Basic' regresa la información básica (Colonia, Municipio y Estado)
+* Si se le manda el código postal y en info ('Colony', 'Municipality', 'State', 'Type of Colony', 'Colony number') regresa lo que le hayas pedido
+* Puedes buscar más de un dato como parametro
+
+NOTA: Si el código postal que mandaste tiene varias colonias, todas estas se imprimiran, al igual que el tipo de colonia y el número de colonia.
+``` sh
+$ python
+Python 2.7.6 (default, Jun 22 2015, 17:58:13) 
+[GCC 4.8.2] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> from mx_datagen import PostalCode
+>>> PostalCode.get_info('57170')
+(u'Colonia', u'Bosques de Arag\xf3n', u'Nezahualc\xf3yotl', u'Ciudad Nezahualcoyotl', u'M\xe9xico', u'15')
+>>> PostalCode.get_info('57170', 'Basic')
+(u'Bosques de Arag\xf3n', u'Nezahualc\xf3yotl', u'M\xe9xico')
+>>> PostalCode.get_info('57170', 'Colony', 'State')
+[u'Bosques de Arag\xf3n', u'M\xe9xico']
+>>> PostalCode.get_info('24030', 'Colony')
+[u'Prado', u'Villas Universidad', u'Miramar', u'Lomas del Castillo', u'Bosques de Campeche', u'H\xe9roes de Chapultepec (FOVI)']
+```
+##### PostalCode.state_postal_code(state)
+Regresa un código postal del estado que mandes como parametro.
+``` sh
+$ python
+Python 2.7.6 (default, Jun 22 2015, 17:58:13) 
+[GCC 4.8.2] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> from mx_datagen import PostalCode
+>>> PostalCode.state_postal_code('Distrito Federal')
+u'09429'
+>>> PostalCode.state_postal_code('México')
+u'50903'
+>>> PostalCode.state_postal_code('asdf')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "mx_datagen/postalcode.py", line 178, in state_postal_code
+    raise ValueError("The state you send doesn't exist, here's the list\n"
+ValueError: The state you send doesn't exist, here's the list
+* Coahuila de Zaragoza        * Querétaro
+* Guerrero                    * Veracruz de Ignacio de la Llave
+* Guanajuato                  * Michoacán de Ocampo
+* Sinaloa                     * Tamaulipas
+* Chihuahua                   * Aguascalientes
+* Nuevo León                  * Tlaxcala
+* Nayarit                     * Chiapas
+* Zacatecas                   * Baja California
+* San Luis Potosí             * Quintana Roo
+* Colima                      * Sonora
+* Tabasco                     * Baja California Sur
+* Puebla                      * México
+* Jalisco                     * Distrito Federal
+* Campeche                    * Durango
+* Oaxaca                      * Yucatán
+* Morelos                     * Hidalgo
+```
