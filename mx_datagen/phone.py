@@ -33,3 +33,8 @@ class Phone:
                 raise ValueError('Invalid lada, check if your lada is here', base_numbers)
         elif lada is None:
             raise ValueError('Please check ladas list in docs')
+
+    @staticmethod
+    def company():
+        """Returns a phone company"""
+        return random.choice(companies)
