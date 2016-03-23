@@ -1,10 +1,14 @@
 # -*- coding: utf-8 -*-
-from __future__ import unicode_literals
 """Companies data"""
-#TODO: Add more prefix, sufix, descriptions and that kind of stuff
+from __future__ import unicode_literals
 
-prefix = ('Compañia', 'Despacho', 'Fondeadora', 'Desarrolladora')
+# TODO: Add more prefix, sufix, descriptions and that kind of stuff
 
-sufix = ('Corp', 'Inc', 'Co', 'Corporation', 'Incorporated', 'Compañía')
+prefix = ['Despacho', 'Grupo', 'Corporativo', 'Club', 'Industria', 'Maquiladora', 'Laboratorios']
 
-description = ('de software', 'Marquez')
+sufix = ['A.C.', 'S.A.', 'S.A. de C.V.', 'S.C.', 'S. R.L. de C.V.', 'e Hijos', 'y Asociados']
+
+description = ['público', 'privado', 'internacional', 'empresarial', 'continental', 'mexicano', 'universal']
+
+activity = ['de Abogados', 'Médico', 'Arquitectónico', 'de diseño', 'de desarrolladores', 'Textil',
+            'farmacéutico']

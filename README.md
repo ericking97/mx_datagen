@@ -22,6 +22,7 @@ Actualmente la librería cuenta con los siguientes métodos
 * Phone
 * Date
 * PostalCode
+* Company
 
 #### Name
 
@@ -179,6 +180,18 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> Phone.lada_phone('55')
 '5560592002'
 ```
+#### Phone.company()
+Regresa una compañía telefónica.
+``` sh
+$ python
+Python 2.7.6 (default, Jun 22 2015, 17:58:13) 
+[GCC 4.8.2] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> from mx_datagen import Phone
+>>> Phone.company()
+u'Telcel'
+```
+
 #### Date
 El módulo Date sirve para crear fechas aleatorias, fechas entre cierto lapso, fechas de nacimiento en base a la edad que quieras y próximas o anteriores fechas de pago (Quincenalidades o catorcenalidades).
 
@@ -353,4 +366,21 @@ ValueError: The state you send doesn't exist, here's the list
 * Campeche                    * Durango
 * Oaxaca                      * Yucatán
 * Morelos                     * Hidalgo
+```
+
+#### Company
+Este módulo contiene funciones para crear nombre de compañía
+
+##### Company.random(prefixed)
+Crea un nombre aleatorio para una compañía se puede especificar si se desea que sea una compañía con sufijo o no.
+``` sh
+$ python
+Python 2.7.6 (default, Jun 22 2015, 17:58:13) 
+[GCC 4.8.2] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> from mx_datagen import Company
+>>> Company.random()
+u'Grupo continental de desarrolladores'
+>>> Company.random(True)
+u'Despacho privado M\xe9dico y Asociados'
 ```
