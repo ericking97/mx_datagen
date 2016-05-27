@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 
 
 setup(name='mx_datagenerator',
-      version='0.4.3',
+      version='0.4.6',
       description='Generador de datos específicamente creado para México',
       url='https://github.com/ericking97/MX_datagen.git',
       author='ericking97',

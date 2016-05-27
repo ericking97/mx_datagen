@@ -157,8 +157,9 @@ u'erick97+70089123@gmail.com'
 #### Phone
 El módulo de Phone crea números telefónicos aleatorios, todos dentro de la republica mexicana, se puede especificar si deseas que un número tenga una lada especifíca.
 
-##### Phone.random()
+##### Phone.random(lada)
 Regresa un número telefónico aleatorio.
+Si lada es True devuelve el número telefónico y la lada usada
 ``` sh
 $ python
 Python 2.7.6 (default, Jun 22 2015, 17:58:13) 
@@ -167,6 +168,8 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> from mx_datagen import Phone
 >>> Phone.random()
 '9217064515'
+>>> Phone.random(lada=True)
+['5521302543','55']
 ```
 ##### Phone.lada_phone(lada)
 Regresa un número telefónico aleatorio con la lada enviada.

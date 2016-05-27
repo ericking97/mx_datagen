@@ -8,14 +8,18 @@ import random
 class Phone:
     """Phones module"""
     @staticmethod
-    def random():
-        """Returns a random phone"""
+    def random(lada=False):
+        """Returns a random phone
+        :param lada Return lada"""
         base = random.choice(base_numbers)
         if len(base) == 2:
             phone = base + str(random.randint(11111111, 99999999))
-        elif len(base) == 3:
+        else:
             phone = base + str(random.randint(1111111, 9999999))
-        return phone
+        if lada is True:
+            return [phone, base]
+        else:
+            return phone
 
     @staticmethod
     def lada_phone(lada=None):

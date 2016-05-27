@@ -152,7 +152,27 @@ class Date:
             if now.day <= 15:
                 now -= datetime.timedelta(days=(15 - (15 - now.day)))
             elif now.day > 15:
-                now -= datetime.timedelta(days=now.day - 15)
+                if now.month in [1, 3, 5, 7, 8, 10, 12]:
+                    if now.day == 31:
+                        pass
+                    else:
+                        now -= datetime.timedelta(days=now.day - 15)
+                elif now.month in [4, 6, 9, 11]:
+                    if now.day == 30:
+                        pass
+                    else:
+                        now -= datetime.timedelta(days=now.day - 15)
+                elif now.month == 2:
+                    if now.year % 4 == 0:
+                        if now.day == 29:
+                            pass
+                        else:
+                            now -= datetime.timedelta(days=now.day - 15)
+                    else:
+                        if now.day == 28:
+                            pass
+                        else:
+                            now -= datetime.timedelta(days=now.day-15)
             return datetime.datetime.strftime(now, '%Y-%m-%d')
         elif pivot:
             try:
