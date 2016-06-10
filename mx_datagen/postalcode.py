@@ -163,7 +163,7 @@ class PostalCode:
     def state_postal_code(state):
         """Returns a postal code from a param state
         :param state"""
-        options = ['Coahuila de Zaragoza', 'Guerrero', 'Querétaro', 'Veracruz de Ignacio de la Llave', 'Guanajuato'
+        options = ['Coahuila de Zaragoza', 'Guerrero', 'Querétaro', 'Veracruz de Ignacio de la Llave', 'Guanajuato',
                    'Michoacán de Ocampo', 'Sinaloa', 'Tamaulipas', 'Chihuahua', 'Aguascalientes', 'Nuevo León',
                    'Tlaxcala', 'Nayarit', 'Chiapas', 'Zacatecas', 'Baja California', 'San Luis Potosí', 'Quintana Roo',
                    'Colima', 'Sonora', 'Tabasco', 'Baja California Sur', 'Puebla', 'México', 'Jalisco',

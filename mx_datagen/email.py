@@ -3,17 +3,23 @@
 from __future__ import unicode_literals
 
 import random
+import json
+import os
 
 from data_source.emails_data import *
-from data_source.names import *
 
 
 class Email:
     """Email module"""
+    global data
+    route = '%s/data_source/names.json' % os.path.dirname(os.path.realpath(__file__))
+    with open(route, 'r') as data_file:
+        data = json.load(data_file)
+
     @staticmethod
     def random():
         """Returns a completely random email"""
-        user_name = random.choice(male_names + female_names)
+        user_name = random.choice(data['Male Names'] + data['Female Names'])
         hosts = random.choice(host)
         domains = random.choice(domain)
         email = '%s@%s%s' % (user_name, hosts, domains)

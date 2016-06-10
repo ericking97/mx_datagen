@@ -28,12 +28,13 @@ Actualmente la librería cuenta con los siguientes métodos
 
 El módulo Name tiene métodos para generar nombres aleatorios, tiene opciones para crear nombres de cierto genero o apellidos de ciertas culturas comúnes de México (mayas, nahuatl). A continuación se explicará como usar dichas funciones junto con ejemplos ilustrativos.
 
-##### Name.first_name(gender)
+##### Name.first_name(gender=None, common=False)
 El método first_name generá un primer nombre.
 Puede o no aceptar un parametro, si no recibe ninguno genera un nombre masculino o femenino.
 Si recibe una 'M', 'male', 'Male', 'Hombre' generá un nombre siempre masculino.
 Si recibe una 'F', 'female', 'Female', 'Mujer' generá un nombre siempre femenino.
 Si recibe algo más que no sea los parametros previamente estípulados regresa error y la lista de parametros aceptados.
+Si common es True manda nombres más comúnes
 ``` sh
 $ python
 Python 2.7.6 (default, Jun 22 2015, 17:58:13)
@@ -54,6 +55,8 @@ Traceback (most recent call last):
 ValueError: Please enter one of the following gender options:
 * Male    * male      * M     * Hombre
 * Female  * female    * F     * Mujer
+>>> Name.first_name(common=True)
+u'José'
 ```
 
 ##### Name.surname(culture)

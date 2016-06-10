@@ -1,1 +1,2 @@
 include mx_datagen/data_source/CP.json
+include mx_datagen/data_source/names.json
